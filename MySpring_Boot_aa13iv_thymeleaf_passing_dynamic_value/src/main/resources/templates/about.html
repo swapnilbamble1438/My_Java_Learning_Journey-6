@@ -1,0 +1,45 @@
+<!-- Type
+
+   html:5 and then press tab 
+
+   then emmet will do its work and 
+   generate html template
+ -->
+
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">  <!-- put this for working thymeleaf -->
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<h1>About Learn Coding</h1>
+	<h1>We are Learning Spring Boot</h1>
+	
+	
+	
+	 <h2 th:text="${name}"></h2>  
+	  <h2 th:text="${date}"></h2>
+	  
+	  <h2> Name of Learner is <span th:text="${name}"></span> </h2>
+	  <h2> Date is <span th:text="${date}"></span> </h2>
+	
+	 <h2 th:text="${#strings.toUpperCase(name)}"></h2>
+	 <h2>length of the name is <span th:text="${#strings.length(name)}"></span></h2>
+	 
+	 <!-- creating local variable -->
+	 
+	 <div th:with = "a=5,b=6, n=${name}">
+	 <!-- but this variable will only work in this div only -->
+	 
+	 <h2> Value of a is <span th:text="${a}"></span></h2>
+	 <h2 th:text="'Value of b is ' + ${b}"></h2>
+	 
+	 <h2>Local value of n is <span th:text="${n}"></span></h2>
+	 
+	 <h2 th:text="'sum of ' +${a}+ ' and ' +${b}+ ' is ' + ${a+b}" > Sum of </h2>
+	 </div>
+	 
+	
+</body>
+</html>
