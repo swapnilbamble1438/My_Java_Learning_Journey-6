@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<h1>This are the services provided by Swapnil</h1>
+	
+	<!-- Going to bring footer here -->
+	
+	
+	<!-- replace -->
+	<footer id="hostTag" th:replace="footer::footer1">
+	
+	</footer>
+	
+	<hr>
+	
+	<!-- insert -->
+	<footer id="hostTag" th:insert="footer::footer1">
+	
+	</footer>
+	
+	<hr>
+	
+	<!-- include -->
+	<footer id="hostTag" th:include="footer::footer1">
+	
+	</footer>
+	
+	<hr>
+	<h2>Right click the mouse and click view page source </h2>
+	<h2>Now compare this page source with footer.html </h2>
+	<h2>And try to understand the operation that has taken place.</h2>
+	
+	
+	
+</body>
+</html>

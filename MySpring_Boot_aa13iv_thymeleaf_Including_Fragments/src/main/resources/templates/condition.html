@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<h1>Conditional Statement in Thymeleaf</h1>
+
+<!--   Example of Elvis operator    -->
+	<h2>User is <span th:text="${isActive}?'Active' : 'Not Active'"></span></h2>
+	
+	<h2>User is <span th:style="${isActive}?'color:green': 'color:red'" th:text="${isActive}?'Active' : 'Not Active'"></span></h2>
+
+
+<!-- Example of if and unless condition -->
+	<h2 th:if="${gender}=='M'"> Male </h2> 
+	<h2 th:unless="${gender}=='M'"> Female </h2>
+
+ <!-- Example of Switch -->
+ 	<div th:switch="${#lists.size(mylist)}">
+ 		<h2 th:case="'0'">list contain zero element</h2>
+ 		<h2 th:case="'1'">list contain one element</h2>
+ 		<h2 th:case="*">list contain more than one elements</h2>
+ 	
+ 	
+ 	</div>
+ 	
+ 
+ 
+ 
+ 
+</body>
+</html>
