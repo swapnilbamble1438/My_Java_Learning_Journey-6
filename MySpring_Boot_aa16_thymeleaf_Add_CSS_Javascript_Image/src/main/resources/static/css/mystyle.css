@@ -1,0 +1,13 @@
+body{
+	background: teal;
+}
+
+.container{
+	background: White;
+	padding: 20px;
+	font-family: 'Roboto';
+}
+
+.profile{
+	border-radius: 50%;
+}
