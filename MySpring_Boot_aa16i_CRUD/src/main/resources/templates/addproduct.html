@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<section class="banner ">
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-md-6 offset-md-3">
+						
+					<div class="my-card mt-2">		
+						
+						<div class = "container text-center">
+							<img style="width:80px" th:src="@{/}" alt="" />
+						</div>
+						<h1 class="text-center" style="color:Black;">Add New Product</h1>
+							
+						<form th:action="@{/doaddproduct}" method="post">
+							
+						<!-- name field -->
+						  <div class="form-group">
+						    <label>Product Name</label>
+						    <input type="text" class="form-control" 
+						    placeholder="Enter Product Name"
+						    name="name"
+						    required />
+							</div>
+							<br>
+							
+							<!-- description field -->
+						  <div class="form-group">
+						    <textarea name="description" rows="6" class="form-control"
+						    placeholder="Enter Product Description"></textarea>
+							</div>
+							<br>
+						
+							
+							<!-- price field -->
+						  <div class="form-group">
+						    <label>Product Price</label>
+						    <input type="text" class="form-control" 
+						    placeholder="Enter Product Price"
+						    name="price" 
+						    required/>
+							</div>
+							<br>
+								
+							
+							<br>
+							<div class="container text-center">
+								<button type="submit" class = "btn bg-primary text-white">
+									Submit
+								</button>
+								
+								<button type="reset" class = "btn btn-warning text-white">
+									Reset
+								</button>
+							</div>
+							
+							
+						</form>
+						
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<section>
+	
+	 <div th:if=${session.msg}>
+    	<!--
+    	<div class="alert alert-success" role="alert" th:text="${session.msg}"></div>
+		<th:block th:text="${#session.removeAttribute('msg')}"></th:block> 
+		-->
+		<div class="alert alert-success alert-dismissible">
+    	<strong>Success! </strong><span th:text="${session.msg}"></span>
+    	<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  		</div>
+    </div>
+	
+	
+		
+    <div class="conatiner p-5">
+    	<table class="table table-striped table-hover">
+  <thead class="bg-dark text-white">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">Product Description</th>
+      <th scope="col">Product Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="e: ${prod}">
+      <th th:text="${e.id}"></th>
+      <th th:text="${e.name}"></th>
+      <th th:text="${e.description}"></th>
+      <th th:text="${e.price}"></th>  
+      <th>
+      	<a class="btn btn-sm btn-dark text-white" th:href="@{/edit/{id}(id=${e.id})}">Edit</a>
+      	<a class="btn btn-sm btn-dark text-white" th:href="@{/delete/{id}(id=${e.id})}">Delete</a>
+      </th>    
+    </tr>
+  </tbody>
+</table>
+    </div>
+      
+    
+	</section>
+</body>
+</html>
